@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Connections - Flyer Design Intake Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .mission {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-top: 15px;
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .section h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3::before {
+            content: "🎨";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .required {
+            color: #ff6b6b;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .file-upload {
+            border: 2px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .file-upload:hover {
+            border-color: #ff6b6b;
+            background: #fff5f5;
+        }
+
+        .file-upload input[type="file"] {
+            display: none;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .disclaimer h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer p {
+            color: #856404;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .contact-info h4 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 184, 148, 0.3);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .form-container {
+                padding: 20px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Cultural Connections</h1>
+            <div class="mission">
+                "Empowering Caribbean Brands, Elevating Culture, and Amplifying Authenticity Through Strategic & Organic Marketing and Promotion."
+            </div>
+        </div>
+
+        <div class="form-container">
+            <form id="flyerIntakeForm" action="https://formspree.io/f/mzzvwbgv" method="POST" enctype="multipart/form-data">
+                <div class="section">
+                    <h3>Client Information</h3>
+                    <div class="grid">
+                        <div class="form-group">
+                            <label for="clientName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="clientName" name="clientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organization">Organization/Promoter Name <span class="required">*</span></label>
+                            <input type="text" id="organization" name="organization" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Event Details</h3>
+                    <div class="grid">
+                        <div class="form-group">
+                            <label for="eventDate">Date of Event <span class="required">*</span></label>
+                            <input type="date" id="eventDate" name="eventDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventTime">Time of Event <span class="required">*</span></label>
+                            <input type="time" id="eventTime" name="eventTime" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventLocation">Event Location <span class="required">*</span></label>
+                        <input type="text" id="eventLocation" name="eventLocation" placeholder="Venue name and full address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dueDate">Flyer Due Date <span class="required">*</span></label>
+                        <input type="date" id="dueDate" name="dueDate" required>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Design Specifications</h3>
+                    <div class="form-group">
+                        <label for="colors">Preferred Colors <span class="required">*</span></label>
+                        <input type="text" id="colors" name="colors" placeholder="e.g., Red, Gold, Green or specific hex codes" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="flyerSize">Flyer Size/Format</label>
+                        <select id="flyerSize" name="flyerSize">
+                            <option value="8.5x11">8.5" x 11" (Standard Letter)</option>
+                            <option value="11x17">11" x 17" (Tabloid)</option>
+                            <option value="square">Square (Instagram/Social)</option>
+                            <option value="story">Story Format (9:16)</option>
+                            <option value="custom">Custom (specify in details)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="specificGraphics">Specific Graphics/Elements Requested</label>
+                        <textarea id="specificGraphics" name="specificGraphics" placeholder="Describe any specific graphics, symbols, or design elements you want included"></textarea>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Entertainment & Talent</h3>
+                    <div class="form-group">
+                        <label for="entertainment">Names of Entertainment/Performers <span class="required">*</span></label>
+                        <textarea id="entertainment" name="entertainment" placeholder="List all performers, DJs, special guests, etc." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="performerPhotos">Performer Photos</label>
+                        <div class="file-upload" onclick="document.getElementById('performerPhotos').click()">
+                            <p>📷 Click to upload performer photos (max 10 files)</p>
+                            <small>Accepted formats: JPG, PNG, PDF. Max 10MB per file.</small>
+                            <input type="file" id="performerPhotos" name="performerPhotos" multiple accept=".jpg,.jpeg,.png,.pdf" data-max-files="10">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Additional Information</h3>
+                    <div class="form-group">
+                        <label for="additionalDetails">Other Details for Flyer</label>
+                        <textarea id="additionalDetails" name="additionalDetails" placeholder="Ticket prices, sponsors, special instructions, dress code, age restrictions, etc."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="customGraphics">Upload Custom Graphics/Logos</label>
+                        <div class="file-upload" onclick="document.getElementById('customGraphics').click()">
+                            <p>🎨 Click to upload custom graphics or logos (max 10 files)</p>
+                            <small>Accepted formats: JPG, PNG, PDF, AI, PSD. Max 10MB per file.</small>
+                            <input type="file" id="customGraphics" name="customGraphics" multiple accept=".jpg,.jpeg,.png,.pdf,.ai,.psd" data-max-files="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFlyer">Upload Example Flyer (Reference/Inspiration)</label>
+                        <div class="file-upload" onclick="document.getElementById('exampleFlyer').click()">
+                            <p>💡 Click to upload an example flyer you like</p>
+                            <small>This helps us understand your style preferences</small>
+                            <input type="file" id="exampleFlyer" name="exampleFlyer" accept=".jpg,.jpeg,.png,.pdf">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Package & Pricing</h3>
+                    <div class="form-group">
+                        <label for="package">Select Package</label>
+                        <select id="package" name="package">
+                            <option value="basic">Basic Flyer - $25</option>
+                            <option value="premium">Premium Flyer - ̶$̶5̶0̶ $30 🔥 LIMITED TIME!</option>
+                            <option value="deluxe">Deluxe Package - $70</option>
+                            <option value="business">Business Package - $100</option>
+                            <option value="custom">Custom Quote Required</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>💳 Payment Information</h3>
+                    <div class="form-group">
+                        <label for="paymentMethod">Preferred Payment Method</label>
+                        <select id="paymentMethod" name="paymentMethod">
+                            <option value="paypal">💙 PayPal (dahlia_96@hotmail.com)</option>
+                            <option value="zelle">⚡ Zelle (dahlia_96@hotmail.com)</option>
+                            <option value="western-union">🌍 Western Union (request payment card)</option>
+                            <option value="moneygram">💰 MoneyGram (request payment card)</option>
+                        </select>
+                    </div>
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                        <p style="margin: 0; color: #2d8a37; font-weight: bold; text-align: center;">
+                            💳 Payment is required before design work begins
+                        </p>
+                    </div>
+                </div>
+
+                <div class="disclaimer">
+                    <h4>📋 Terms & Conditions</h4>
+                    <p><strong>Revisions:</strong> Client is entitled to 3 edits after the initial design delivery. Additional revisions will incur extra charges.</p>
+                    <p><strong>Sales Policy:</strong> All sales are final. No refunds will be issued after work has commenced.</p>
+                    <p><strong>Timeline:</strong> Rush orders (less than 48 hours) will incur a 50% rush fee.</p>
+                    <p><strong>Copyright:</strong> Cultural Connections retains the right to use completed designs in our portfolio unless otherwise specified.</p>
+                    <p><strong>Client Responsibility:</strong> Client is responsible for providing accurate information and high-quality images. Cultural Connections is not liable for errors resulting from incorrect client information.</p>
+                    <p><strong>Delivery:</strong> Final designs will be delivered digitally in high-resolution format via email.</p>
+                    <p><strong>Cancellation:</strong> Cancellations must be made within 2 hours of order placement for a full refund.</p>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">I agree to the terms and conditions stated above <span class="required">*</span></label>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h4>📞 Contact Information</h4>
+                    <p><strong>Facebook:</strong> Cultural Connections</p>
+                    <p><strong>Email:</strong> culturalconnections2023@gmail.com</p>
+                    <p><strong>Phone (Text Only):</strong> 469-532-7235</p>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Design Request 🚀</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('flyerIntakeForm').addEventListener('submit', function(e) {
+            // Show loading state
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '🚀 Sending...';
+            submitBtn.disabled = true;
+            
+            // Let the form submit naturally to Formspree
+            // No need to prevent default - Formspree will handle it
+            
+            // Show success message after a brief delay
+            setTimeout(() => {
+                submitBtn.innerHTML = '✅ Submitted Successfully!';
+                submitBtn.style.background = 'linear-gradient(135deg, #00b894 0%, #00a085 100%)';
+            }, 1000);
+        });
+
+        // File upload feedback and validation
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function() {
+                const files = this.files;
+                const uploadDiv = this.parentElement;
+                const maxFiles = this.getAttribute('data-max-files') || 999;
+                
+                if (files.length > maxFiles) {
+                    alert(`Please select maximum ${maxFiles} files only.`);
+                    this.value = '';
+                    return;
+                }
+                
+                if (files.length > 0) {
+                    uploadDiv.style.borderColor = '#00b894';
+                    uploadDiv.style.backgroundColor = '#f0fff4';
+                    const fileNames = Array.from(files).map(file => file.name).join(', ');
+                    uploadDiv.innerHTML = `<p>✅ ${files.length} file(s) selected (max ${maxFiles}):</p><small>${fileNames}</small>` + uploadDiv.innerHTML;
+                }
+            });
+        });
+
+        // Set minimum due date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('dueDate').min = tomorrow.toISOString().split('T')[0];
+        
+        // Set minimum event date to today
+        const today = new Date();
+        document.getElementById('eventDate').min = today.toISOString().split('T')[0];
+    </script>
+</body>
+</html>
